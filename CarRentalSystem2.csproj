@@ -42,6 +42,10 @@
     <Reference Include="Bunifu.UI.WinForms, Version=0.0.0.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
       <HintPath>packages\Bunifu.UI.WinForms.7.2.0\lib\net48\Bunifu.UI.WinForms.dll</HintPath>
     </Reference>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="DotNetEnv, Version=3.1.1.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>packages\DotNetEnv.3.1.1\lib\netstandard1.3\DotNetEnv.dll</HintPath>
     </Reference>
@@ -211,6 +215,7 @@
       <HintPath>packages\System.ValueTuple.4.5.0\lib\net47\System.ValueTuple.dll</HintPath>
     </Reference>
     <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
     <Reference Include="System.Xaml" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -232,6 +237,12 @@
   <ItemGroup>
     <Compile Include="Common\AuthenticationServices.cs" />
     <Compile Include="Common\Commons.cs" />
+    <Compile Include="CrystalReport1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CrystalReport1.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Handlers\CommandHandlers\AnalyticsCommandHandler.cs" />
     <Compile Include="Handlers\CommandHandlers\CarCommandHandler.cs" />
     <Compile Include="Handlers\CommandHandlers\CustomerCommandHandler.cs" />
@@ -302,6 +313,12 @@
     <Compile Include="Views\AvailableCarsPage.Designer.cs">
       <DependentUpon>AvailableCarsPage.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\CrystalReportPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\CrystalReportPage.Designer.cs">
+      <DependentUpon>CrystalReportPage.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\CustomerPage.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -344,6 +361,10 @@
     <Compile Include="Views\RentCarPage.Designer.cs">
       <DependentUpon>RentCarPage.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="CrystalReport1.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrystalReport1.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -374,6 +395,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\AvailableCarsPage.resx">
       <DependentUpon>AvailableCarsPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\CrystalReportPage.resx">
+      <DependentUpon>CrystalReportPage.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\CustomerPage.resx">
       <DependentUpon>CustomerPage.cs</DependentUpon>
@@ -433,6 +457,9 @@
     <None Include="Resources\people.png" />
     <Content Include="Resources\rent_car.png" />
     <None Include="Resources\user.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
