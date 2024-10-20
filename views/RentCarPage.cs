@@ -267,7 +267,7 @@ namespace CarRentalSystem2.Views
             cmbFilter.SelectedIndex = 0;
 
             // Set the dock style to fill
-            //dtgAvailableCars.Dock = DockStyle.Fill;
+            //dtgAvailableCars.Dock = DockStyle.Fill;   
 
             /*// Set row styling
             dtgAvailableCars.RowsDefaultCellStyle.BackColor = Color.White; // White background for rows
